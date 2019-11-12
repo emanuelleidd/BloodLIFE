@@ -56,11 +56,11 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <EditText
-        android:id="@+id/editIdade"
+        android:id="@+id/editCep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Idade"
+        android:hint="CEP"
         android:inputType="number"
         android:textColor="#202020"
         android:textColorHighlight="#202020"
@@ -84,7 +84,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editIdade"
+        app:layout_constraintTop_toBottomOf="@+id/editCep"
         app:layout_constraintVertical_bias="0.026" />
 
     <EditText
@@ -118,38 +118,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefone"
         app:layout_constraintVertical_bias="0.03" />
 
-    <Switch
-        android:id="@+id/switchF"
-        android:layout_width="115dp"
-        android:layout_height="30dp"
-        android:text="Feminino"
-        android:textAllCaps="true"
-        android:textColor="#202020"
-        android:textColorHighlight="#202020"
-        android:textColorHint="#202020"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
-
-    <Switch
-        android:id="@+id/switchM"
-        android:layout_width="127dp"
-        android:layout_height="32dp"
-        android:text="Masculino"
-        android:textAllCaps="true"
-        android:textColor="#202020"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.758"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
-
     <Button
         android:id="@+id/botaoCadastrar"
         android:layout_width="224dp"
@@ -165,7 +133,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
+        app:layout_constraintVertical_bias="0.991" />
 
     <EditText
         android:id="@+id/editTipoSanguineo"
@@ -212,4 +180,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCadastro"
         app:layout_constraintVertical_bias="0.02" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/botaoCadastrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTipoSanguineo">
+
+        <RadioButton
+            android:id="@+id/radioButtonM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masculino"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/radioButtonF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Feminino"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/radioButtonO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Outros"
+            android:textColor="#FFFFFF" />
+
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

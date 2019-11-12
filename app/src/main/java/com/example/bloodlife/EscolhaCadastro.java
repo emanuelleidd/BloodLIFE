@@ -16,7 +16,7 @@ public class EscolhaCadastro extends AppCompatActivity {
     }
 
     public void TelaCadastro(View view) {
-        Button CriarConta = findViewById(R.id.botaoUsuario);
+        Button botaoUsuario = findViewById(R.id.botaoUsuario);
         Intent TelaCadastro = new Intent(getApplicationContext(), TelaCadastroUsuario.class);
         startActivity(TelaCadastro);
     }

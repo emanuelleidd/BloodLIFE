@@ -13,8 +13,8 @@
         <activity android:name=".TelaInstrucoes" />
         <activity android:name=".CadastroHemocentro" />
         <activity android:name=".EscolhaCadastro" />
-        <activity android:name=".TelaInicial" />
-        <activity android:name=".TelaCadastro" />
+        <activity android:name=".PerfilUsuario" />
+        <activity android:name=".TelaCadastroUsuario" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

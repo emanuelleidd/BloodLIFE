@@ -17,23 +17,24 @@ public class Perfil_Hemocentro extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String  = bundle.getString("nome");
+        String  = bundle.getString("nomeHemo");
         TextView nome = findViewById(R.id.textNomeHemocentro);
         nome.setText((CharSequence) nome);
 
-        String senha = bundle.getString("senha");
+
+        String senha = bundle.getString("senhaHemo");
         TextView textSenhaHemo = findViewById(R.id.textSenhaHemo);
         textSenhaHemo.setText(senha);
 
-        String cnpj = bundle.getString("cnpj");
+        String cnpj = bundle.getString("cnpjHemo");
         TextView textCnpj = findViewById(R.id.textCnpj);
         textCnpj.setText(cnpj);
 
-        String localizacao = bundle.getString("localizacao");
+        String localizacao = bundle.getString("localizacaoHemo");
         TextView textLocalizacao = findViewById(R.id.textLocalizacao);
         textLocalizacao.setText(localizacao);
 
-        String telefone = bundle.getString("telefone");
+        String telefone = bundle.getString("telefoneHemo");
         TextView textTelefoneHemo = findViewById(R.id.textTelefoneHemo);
         textTelefoneHemo.setText(telefone);
     }

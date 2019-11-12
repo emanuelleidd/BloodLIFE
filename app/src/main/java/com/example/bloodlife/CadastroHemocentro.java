@@ -15,22 +15,34 @@ public class CadastroHemocentro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_hemocentro);
 
-        Intent PerfilUsuario = new Intent(getApplicationContext(), Perfil_Hemocentro.class);
+        Bundle pacote = new Bundle();
+
 
         EditText editNomeHemo = findViewById(R.id.editNomeHemo);
-        String nomeHemo = editNomeHemo.getText().toString();
+        String nome = editNomeHemo.getText().toString();
+        pacote.putString("nomeHemo", nome);
 
         EditText editSenha = findViewById(R.id.editSenhaHemo);
         String senhaHemo = editSenha.getText().toString();
+        pacote.putString("senhaHemo", senhaHemo);
 
         EditText editCnpj = findViewById(R.id.editCnpj);
-        String cnpj = editSenha.getText().toString();
+        String cnpj = editCnpj.getText().toString();
+        pacote.putString("cnpjHemo", cnpj);
 
         EditText editLocalizacao = findViewById(R.id.editLocalizacao);
         String localizacao = editLocalizacao.getText().toString();
+        pacote.putString("localizacaoHemo", localizacao);
 
         EditText editTelefoneHemo = findViewById(R.id.editTelefoneHemo);
         String telefoneHemo = editTelefoneHemo.getText().toString();
+        pacote.putString("telefoneHemo", telefoneHemo);
+
+        Intent perfilHemocentro = new Intent(getApplicationContext(), Perfil_Hemocentro.class);
+        perfilHemocentro.putExtras(pacote);
+        startActivity(perfilHemocentro);
+
+
     }
 
     public void TelaInicial(View view) {

@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 public class PerfilUsuario extends AppCompatActivity {
 
-    private Object String;
-    private TextView usuario;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,30 +17,36 @@ public class PerfilUsuario extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String  = bundle.getString("usuario");
-        TextView usuario = findViewById(R.id.textUsuario);
-        usuario.setText((CharSequence) usuario);
-        String senha = bundle.getString("senha");
+        String nome = bundle.getString("nomeUsuario");
+        TextView campoUsuario = findViewById(R.id.textUsuario);
+        campoUsuario.setText(nome);
+
+        String senha = bundle.getString("senhaUsuario");
         TextView textSenha = findViewById(R.id.textSenha);
         textSenha.setText(senha);
-        String idade = bundle.getString("idade");
-        TextView textIdade = findViewById(R.id.textIdade);
-        textIdade.setText(idade);
-        String email = bundle.getString("email");
+
+        String cep = bundle.getString("cepUsuario");
+        TextView textCep = findViewById(R.id.textCep);
+        textCep.setText(cep);
+
+        String email = bundle.getString("emailUsuario");
         TextView textEmail = findViewById(R.id.textEmail);
         textEmail.setText(email);
-        String telefone = bundle.getString("telefone");
+
+        String telefone = bundle.getString("telefoneUsuario");
         TextView textTelefone = findViewById(R.id.textTelefone);
         textTelefone.setText(telefone);
-        String cpf = bundle.getString("cpf");
+
+        String cpf = bundle.getString("cpfUsuario");
         TextView textCpf = findViewById(R.id.textCpf);
         textCpf.setText(cpf);
-        String tipo_sanguineo = bundle.getString("tipo_sanguineo");
+
+        String tipo_sanguineo = bundle.getString("tipoSanguineoUsuario");
         TextView textTipoSanguineo = findViewById(R.id.textTipoSanguineo);
         textTipoSanguineo.setText(tipo_sanguineo);
-        String sexo = bundle.getString("sexo");
-        TextView textSexoResposta = findViewById(R.id.textSexoResposta);
-        textSexoResposta.setText(sexo);
+
+        String sexo = bundle.getString("sexoUsuario");
+
     }
 
     public void TelaInstrucoes(View view) {

@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -21,27 +21,47 @@ public class TelaCadastroUsuario extends AppCompatActivity {
     }
 
     public void TelaInicial(View view) throws IOException {
+        Bundle pacote = new Bundle();
 
-        Intent PerfilUsuario = new Intent(getApplicationContext(), PerfilUsuario.class);
         EditText editUsuario = findViewById(R.id.editUsuario);
         String usuario = editUsuario.getText().toString();
+        pacote.putString("nomeUsuario", usuario);
+
         EditText editSenha = findViewById(R.id.editSenha);
         String senha = editSenha.getText().toString();
-        EditText editIdade = findViewById(R.id.editIdade);
-        String idade = editSenha.getText().toString();
+        pacote.putString("senhaUsuario", senha);
+
+        EditText editCep = findViewById(R.id.editCep);
+        String cep = editCep.getText().toString();
+        pacote.putString("cepUsuario", cep);
+
         EditText editEmail = findViewById(R.id.editEmail);
         String email = editEmail.getText().toString();
+        pacote.putString("emailUsuario", email);
+
         EditText editTelefone = findViewById(R.id.editTelefone);
         String telefone = editTelefone.getText().toString();
+        pacote.putString("telefoneUsuario", telefone);
+
         EditText editCpf = findViewById(R.id.editCpf);
         String cpf = editCpf.getText().toString();
+        pacote.putString("cpfUsuario", cpf);
+
         EditText editTipoSanguineo = findViewById(R.id.editTipoSanguineo);
         String tipo_sanguineo = editTipoSanguineo.getText().toString();
-        Switch sexo_feminino = findViewById(R.id.switchF);
-        String feminino = sexo_feminino.getText().toString();
-        Switch sexo_masculino = findViewById(R.id.switchM);
-        String masculino = sexo_masculino.getText().toString();
-        Button Login = findViewById(R.id.botaoCadastrar);
+        pacote.putString("tipoSanguineoUsuario", tipo_sanguineo);
+
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        if (radioGroup.getCheckedRadioButtonId() == R.id.radioButtonF) {
+            pacote.putString("sexoUsuario", "Feminino");
+        } else if (radioGroup.getCheckedRadioButtonId() == R.id.radioButtonM) {
+            pacote.putString("sexoUsuario", "Masculino");
+        }
+
+        DBHelper.insertIntoUsuario(usuario, senha, cep, ...);
+
+        Intent PerfilUsuario = new Intent(getApplicationContext(), PerfilUsuario.class);
+        PerfilUsuario.putExtras(pacote);
         startActivity(PerfilUsuario);
     }
 }
