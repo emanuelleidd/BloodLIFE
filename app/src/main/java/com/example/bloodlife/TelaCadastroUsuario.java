@@ -58,7 +58,7 @@ public class TelaCadastroUsuario extends AppCompatActivity {
             pacote.putString("sexoUsuario", "Masculino");
         }
 
-        DBHelper.insertIntoUsuario(usuario, senha, cep, ...);
+        DBHelper.insertIntoUsuario(usuario, senha, cep, ..);
 
         Intent PerfilUsuario = new Intent(getApplicationContext(), PerfilUsuario.class);
         PerfilUsuario.putExtras(pacote);
